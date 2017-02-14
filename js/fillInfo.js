@@ -80,27 +80,26 @@ function checkVersion(data, subjectCode, gradeVersionId, structure, structureId,
 
 function setDefaultColor(arr) {
     for (var i = 0; i < arr.length; i++) {
-        document.getElementById(arr[i]).style.color = "white";
+        document.getElementById(arr[i]).style.color = "#706e72";
     }
 }
 
 function defineColor(data, subject) {
-    console.log(subject);
     if (data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Reprovado" ||
         data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Rep. s/n" ||
         data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Repr. Freq") {
-        document.getElementById(subject).style.color = "red";
+        document.getElementById(subject).style.color = "#e03121";
     } else if (data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Matricula") {
-        document.getElementById(subject).style.color = "blue";
+        document.getElementById(subject).style.color = "#159ac6";
     } else if (data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Equivale") {
-        document.getElementById(subject).style.color = "yellow";
+        document.getElementById(subject).style.color = "#cc9e20";
     } else if (data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Aprovado" ||
             data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Disp. c/nt") {
-        document.getElementById(subject).style.color = "green";
+        document.getElementById(subject).style.color = "#11895d";
     } else if (data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "TrancAdm" ||
             data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Tr. Total" ||
             data.getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue === "Cancelado") {
-        document.getElementById(subject).style.color = "purple";
+        document.getElementById(subject).style.color = "#812ed3";
     }
 }
 
@@ -130,6 +129,9 @@ function fill(subject) {
         tag = "ID_ESTRUTURA_CUR";
     } else if (subject >= "1" && subject <= "9") {
         var num = Number(subject)-1;
+        if (num >= optativas.length) {
+            return;
+        }
         subject = optativas[num].getElementsByTagName("COD_ATIV_CURRIC")[0].childNodes[0].nodeValue;
     }
 
@@ -181,7 +183,7 @@ function generateOptativas() {
         }
     }
     
-    // bubble-sort to sort the approved subject before the not approved
+    // bubble-sort to sort the subjects in which the student was approved before the ones he/she was not approved
     for (var i = 0; i < list.length; i++) {
         for (var j = 1; j < list.length; j++) {
             if (list[j].getElementsByTagName("SIGLA")[0].childNodes[0].nodeValue == "Aprovado" &&

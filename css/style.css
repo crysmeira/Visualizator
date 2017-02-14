@@ -1,20 +1,28 @@
 .jumbotron {
     background-color: #d50000;
     color: #ffffff;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+               0px 8px 13px rgba(0,0,0,0.1),
+               0px 18px 23px rgba(0,0,0,0.1);
 }
 
-td {
-    text-align: center;
-    color: #104E8B;
-    font-size: 14px;
+.search {
+    margin: 20px;
+    margin-bottom: 40px;
 }
 
-th {
-    text-align: center;
+h4 {
+    font-weight: bold;
 }
 
-body {
-    background-color:#ffffff;
+table {
+    background-color: #ffebee;
+    margin: 0 auto; 
+}
+
+.table-info {
+    width: 100%;
+    overflow-x: auto;
 }
 
 table#table-version-2011 {
@@ -22,21 +30,34 @@ table#table-version-2011 {
 }
 
 table#table-version-1998 {
-    visibility: collapse;
+    visibility: visible;
 }
 
-table {
-    background-color: #ffebee;
-    margin-left: auto; 
-    margin-right: auto; 
+th {
+    color: #000000;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-align: center;
+    font-weight: bold;
+}
+
+td {
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0px 8px 13px rgba(0,0,0,0.2);
+}
+
+.table-info {
+    margin-bottom: 50px;
+}
+
+.form-info {
+    margin-bottom: 50px;
 }
 
 .center {
     text-align: center;
-}
-
-.search {
-    margin: 20px;
 }
 
 input.details {
