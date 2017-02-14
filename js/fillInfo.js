@@ -41,7 +41,9 @@ function setColor() {
 function checkVersion(data, subjectCode, gradeVersionId, structure, structureId, optNumber) {
     if (gradeVersionId == "1227") { // 2011 version
         document.getElementById("table-version-1998").style.visibility = "collapse";
+        document.getElementById("table-responsive-1998").style.visibility = "hidden";
         document.getElementById("table-version-2011").style.visibility = "visible";
+        document.getElementById("table-responsive-2011").style.visibility = "visible";
         
         if (structure == "Optativas" || 
             structure == "Disciplinas de outros cursos" || 
@@ -57,7 +59,9 @@ function checkVersion(data, subjectCode, gradeVersionId, structure, structureId,
         defineColor(data, subjectCode+"a");
     } else { // 1998 version
         document.getElementById("table-version-1998").style.visibility = "visible";
+        document.getElementById("table-responsive-1998").style.visibility = "visible";
         document.getElementById("table-version-2011").style.visibility = "collapse";
+        document.getElementById("table-responsive-2011").style.visibility = "hidden";
         
         if (subjectCode == "CM224") { // update code
             subjectCode = "TP052";

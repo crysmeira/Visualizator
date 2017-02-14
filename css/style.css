@@ -20,9 +20,12 @@ table {
     margin: 0 auto; 
 }
 
-.table-info {
-    width: 100%;
-    overflow-x: auto;
+div#table-responsive-2011 {
+    visibility: hidden;
+}
+
+div#table-responsive-1998 {
+    visibility: hidden;
 }
 
 table#table-version-2011 {
