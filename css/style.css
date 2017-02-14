@@ -30,7 +30,7 @@ table#table-version-2011 {
 }
 
 table#table-version-1998 {
-    visibility: visible;
+    visibility: collapse;
 }
 
 th {
